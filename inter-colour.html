@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- favicon cdn -->
+  <link rel="icon" type="image/x-icon" href="image/inter-color-logo.png">
+  <title>Inter Colour Quality Paint</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: blue;
+    }
+
+    .nav-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+    }
+
+    .nav-logo span {
+      color: #32CD32;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #007BFF;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+      background-color: #eeeeee;
+    }
+
+    .header div {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .header h1 {
+      font-size: 45px;
+      font-weight: bolder;
+      text-transform: uppercase;
+    }
+
+    .header p {
+      font-size: 26px;
+    }
+
+    .header button {
+      width: 130px;
+      height: 40px;
+      border: none;
+      border-radius: 5px;
+      background-color: blue;
+      margin-top: 1rem;
+      color: #fff;
+      transition: 0.3s ease;
+    }
+
+    .header button:hover {
+      background-color: #fff;
+      color: blue;
+    }
+
+    .about-us {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .about-us h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+    }
+
+    .about {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .about div {
+      flex: 1 1 300px;
+    }
+
+    .about img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .about p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .trusties {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #eeeeee;
+    }
+
+    .trusted-companies {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .trusted-companies div {
+      flex: 1;
+      width: 40%;
+    }
+
+    .trusted-companies img {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .benefit-div {
+      background: #f9f9f9;
+    }
+
+    .benefit-div1 {
+      padding: 40px;
+    }
+
+    .benefits-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    .benefit {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .benefit:hover {
+      transform: translateY(-5px);
+    }
+
+    .benefit i {
+      font-size: 36px;
+      color: #007BFF;
+      margin-bottom: 15px;
+    }
+
+    .benefit h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .benefit p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .inter-color-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    .inter-color-img img {
+      width: 100%;
+      max-width: 1100px;
+      border-radius: 30px;
+    }
+
+    .top-notch {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .top-notch h1 {
+      font-size: 40px;
+      text-transform: capitalize;
+    }
+
+    .top-notch button {
+      margin-top: 10px;
+      width: 130px;
+      height: 40px;
+      border: none;
+      background-color: #eeeeee;
+      text-transform: capitalize;
+      border-radius: 50px;
+    }
+
+    .what-people-say {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+    .what-people-say h3 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: #333;
+      text-transform: capitalize;
+    }
+
+    .what-people-say-div {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .what-people-say-div > div {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .what-people-say-div > div:hover {
+      transform: translateY(-5px);
+    }
+
+    .what-people-say-div img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid black;
+    }
+
+    .what-people-say-div h5 {
+      font-size: 16px;
+      margin: 10px 0 5px;
+      color: #007BFF;
+    }
+
+    .what-people-say-div p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .mapping-success {
+      padding: 40px 20px;
+    }
+
+    .mapping {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: capitalize;
+    }
+
+    .mapping button {
+      margin-top: 10px;
+      width: 130px;
+      height: 40px;
+      border: none;
+      background-color: #eeeeee;
+      text-transform: capitalize;
+      border-radius: 50px;
+    }
+
+    .numbering {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .numbering > div {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      line-height: 2;
+    }
+
+    .numbering > div:hover {
+      transform: scale(1.1);
+    }
+
+    .number {
+      font-size: 50px;
+      color: grey;
+    }
+
+    .connect {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    .connect h1 {
+      text-transform: capitalize;
+    }
+
+    .connect p {
+      text-transform: capitalize;
+    }
+
+    .connect button {
+      margin-top: 10px;
+      width: 300px;
+      height: 40px;
+      border: none;
+      background-color: #007BFF;
+      color: #fff;
+      text-transform: capitalize;
+      border-radius: 50px;
+    }
+
+
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-logo {
+        font-size: 1rem;
+      }
+
+       .about {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .about p {
+        padding: 0 10px;
+      }
+
+      .trusted-companies {
+        flex-direction: column;
+      }
+
+      .trusted-companies div {
+        width: 100;
+        margin: auto;
+      }
+
+      .trusties {
+        text-align: center;
+      }
+
+      .mapping h1 {
+        font-size: 20px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #007BFF;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="image/inter-color-logo.png">
+        <h1> <span>Inter</span>Colour</h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="#">Home</a>
+        <a href="#about-us">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="our.offices.html">Our Offices</a>
+        <a href="products.html">Products</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="header">
+    <div>
+      <h1>Inter Colour Quality Paint</h1>
+      <p>Your Trusted Partner In Colorful Living</p>
+      <button>Learn More</button>
+      <button>Contact Us</button>
+    </div>
+  </div>
+
+  <div class="about-us" id="about-us">
+    <h2>About us</h2>
+    <div class="about">
+      <div>
+        <img src="image/inter-color-logo.png">
+      </div>
+
+      <div>
+        <p>Inter Colour Painting Company is a creative and reliable paint solutions provider dedicated to transforming spaces with vibrant, high-quality finishes. With a passion for color and a commitment to excellence, we offer expert painting services, custom color matching, and premium products that bring walls to life—whether in homes, offices, or commercial spaces.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="trusties">
+    <h3>Trusted by;</h3>
+    <br> <br>
+    <div class="trusted-companies">
+      <div><img src="image/uba.png"></div>
+      <div><img src="image/mtn.png"></div>
+      <div> <img src="image/jumia.png"> </div>
+      <div> <img src="image/opay.png"> </div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="benefit-div">
+    <div class="benefit-div1">
+      <h5>Benefits</h5>
+      <h1> We have cracked the code.</h1>
+      <br> <p>Inter Colour provides real unique paintings for all decorations</p>
+    </div>
+
+    <div class="benefits-container">
+      <div class="benefit">
+        <i class="fas fa-paint-brush"></i>
+        <h4>Expert Craftsmanship</h4>
+        <p>Our experienced painters deliver flawless finishes, paying attention to every detail for a smooth, professional, long-lasting result.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fas fa-clock"></i>
+        <h4>On-Time Delivery</h4>
+        <p>We value your time by sticking to schedules and completing projects promptly without compromising quality or customer satisfaction.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fas fa-leaf"></i>
+        <h4>Eco-Friendly Materials</h4>
+        <p>We use low-VOC, environmentally safe paints that are healthier for your home, family, and the environment.</p>
+      </div>
+
+      <div class="benefit">
+        <i class="fas fa-wallet"></i>
+        <h4>Affordable Quality</h4>
+        <p>We offer top-tier painting services at competitive prices, ensuring you get premium results without breaking the bank.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="inter-color-img">
+    <img src="image/inter-color.jpeg">
+  </div>
+
+  <div class="top-notch">
+    <div>
+      <p>Top Notch</p>
+      <h1>Why choose inter colour?</h1>
+      <p>You need a solution that keeps up. That’s why Inter Colour exist. A unique-painting approach to beautify your home. </p>
+      <button>Discover more</button>
+    </div>
+  </div>
+
+  <div class="what-people-say">
+    <h3>what people are saying!</h3>
+    <div class="what-people-say-div">
+      <div>
+        <img src="image/keke-anold.jpeg">
+        <h5>Joseph Anold</h5>
+        <p> <i>"Professional and efficient team. They transformed my living room with beautiful colors and left everything spotless. Highly recommend them!"</i> </p>
+      </div>
+
+      <div>
+        <img src="image/download1.jpeg">
+        <h5>Rose Daniel</h5>
+        <p> <i>"Inter Colour exceeded my expectations. Excellent attention to detail and very friendly service. I love the final result!"</i> </p>
+      </div>
+
+      <div>
+        <img src="image/download2.jpeg">
+        <h5>Stephen Maxwell</h5>
+        <p> <i>"Great value for money. The painters were punctual, respectful, and their work was flawless. I’ll definitely use them again!"</i> </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mapping-success">
+    <div class="mapping">
+      <h1>Map your success</h1>
+      <button>Discover more</button>
+    </div> <br> <br>
+
+    <div class="numbering">
+      <div>
+        <p class="number">01</p>
+        <h4>Get started</h4>
+        <p>With our intuitive colours, you’re up and running in minutes.</p>
+      </div>
+
+      <div>
+        <p class="number">02</p>
+        <h4>Customize and Configure</h4>
+        <p>Adapt Inter Colour to your specific requirements and preferences.</p>
+      </div>
+
+      <div>
+        <p class="number">03</p>
+        <h4>Grow Your Business</h4>
+        <p>Make informed decisions to exceed your goals.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="connect">
+    <div>
+      <h1>Connect with us</h1>
+      <p>Schedule a quick call to learn how Inter Colour can turn your Ambiance and Environment into a powerful advantage.</p>
+      <br>
+      <button>learn more</button>
+    </div>
+  </div>
+
+  <br> <br>
+  <footer>
+    <p> <i>© 2025 Jamexx</i> - Frontend Developer</p>
+  </footer>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

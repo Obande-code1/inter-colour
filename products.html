@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pure HTML CSS JS Navbar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: blue;
+    }
+
+    .nav-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+    }
+
+    .nav-logo span {
+      color: #32CD32;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #007BFF;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .container {
+      background: url('image/COVER+PAGE.jpg') no-repeat center center/cover;
+      height: 600px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      font-size: 50px;
+    }
+
+    .container h1 {
+      -webkit-text-stroke: 1px black;
+    }
+
+    .interior {
+      width: 100%;
+      padding: 2rem;
+    }
+
+    .exterior {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .exterior button {
+      width: 210px;
+      height: 40px;
+      text-transform: uppercase;
+      background-color: black;
+      color: #fff;
+      border-radius: 5px;
+      border: none;
+    }
+
+    .product-container {
+      padding: 2rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .product-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .img-colours {
+      background: url('image/image-asset (9).jpeg') no-repeat center center/cover;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-grid a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: dodgerblue;
+      font-weight: bold;
+    }
+
+    .ename-container {
+      padding: 2rem;
+    }
+
+    .ename-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .ename-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .ename-grid a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: dodgerblue;
+      font-weight: bold;
+    }
+
+    .img-colours {
+      background: url('image/image-asset (9).jpeg') no-repeat center center/cover;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .screeding-container {
+      padding: 2rem;
+    }
+
+    .screeding-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .screeding-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .screeding-grid a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: dodgerblue;
+      font-weight: bold;
+    }
+
+    .img-colours {
+      background: url('image/image-asset (9).jpeg') no-repeat center center/cover;
+      height: 100px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .paint-container {
+      padding: 2rem;
+    }
+
+    .paint-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .paint-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .paint-grid a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: dodgerblue;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .exterior {
+        font-size: 10px;
+      }
+
+      .exterior button {
+        font-size: 10px;
+        width: 190px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="image/inter-color-logo.png">
+        <h1> <span>Inter</span>Colour</h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="inter-colour.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="our.offices.html">Our Offices</a>
+        <a href="#">Products</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>PRODUCTS</h1>
+  </div>
+
+  <div class="interior">
+    <div class="exterior">
+      <h2>interior and exterior paints</h2>
+      <a href="https://static1.squarespace.com/static/5c35d55689c172f8b7f6667a/t/66dad87513051836317d5202/1725618405502/INTERCOLOR+PAINT+PRODUCT+BROCHURES+.pdf"><button>paint product brochures</button></a>
+    </div>
+  </div>
+
+  <div class="product-container">
+    <div>
+      <hr>
+      <div class="product-grid">
+        <div> <img src="image/silk.jpg"> <br>
+        <a href="#">Intersilk emulsion</a> 
+        </div>
+        <div> <img src="image/matt_white_bg.jpg"> <br>
+        <a href="#">Inter colour matt emulsion</a> 
+        </div>
+        <div>
+          <img src="image/white_white_bg.jpg"> <br>
+          <a href="#">interclass emulsion</a> 
+        </div>
+        <div>
+          <img src="image/white_white_bg (1).jpg"> <br>
+          <a href="#">inter colour select washable</a>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="img-colours"></div>
+
+  <div class="ename-container">
+    <h2>ENAMEL PAINT</h2> <br><br>
+    <div>
+      <hr>
+      <div class="ename-grid">
+        <div> <img src="image/small_metal_can_white_bg.jpg"> <br>
+        <a href="#">INTERGLOSS ENAMEL</a> 
+        </div>
+        <div> <img src="image/small_metal_can_white_bg (1).jpg"> <br>
+        <a href="#">INTERCRYL TOP COAT</a> 
+        </div>
+        <div>
+          <img src="image/small_metal_can_white_bg (2).jpg"> <br>
+          <a href="#">ROAD MARKERS</a> 
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="img-colours"></div>
+
+  <div class="screeding-container">
+    <h2>screeding </h2> <br><br>
+    <div>
+      <hr>
+      <div class="screeding-grid">
+        <div> <img src="image/grey_white_bg.jpg"> <br>
+        <a href="#">INTERPUTTY GOLD</a> 
+        </div>
+        <div> <img src="image/screeding_master_white_bg.jpg"> <br>
+        <a href="#">SCREEDING MASTER</a> 
+        </div>
+        <div>
+          <img src="image/smart_screed_white_bg.jpg"> <br>
+          <a href="#">SMART SCREED</a> 
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="img-colours"></div>
+
+  <div class="paint-container">
+    <h2>SPECIALTY PAINTS</h2> <br><br>
+    <div>
+      <hr>
+      <div class="paint-grid">
+        <div> <img src="image/white_white_bg (2).jpg"> <br>
+        <a href="#">interpearl textured</a> 
+        </div>
+        <div> <img src="image/white_white_bg (3).jpg"> <br>
+        <a href="#">MULTI RED ROOF COAT</a> 
+        </div>
+        <div>
+          <img src="image/big_metal_can_white_bg.jpg"> <br>
+          <a href="#">PEARL GRITTO</a> 
+        </div>
+        <div>
+          <img src="image/white_white_bg (4).jpg"> <br>
+          <a href="#">ROYAL SHEEN DESIGN</a>
+        </div>
+      </div>
+      <hr>
+
+    </div>
+  </div>
+
+  <div class="img-colours"></div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

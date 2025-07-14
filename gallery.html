@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- favicon cdn -->
+  <link rel="icon" type="image/x-icon" href="image/inter-color-logo.png">
+  <title>Inter Colour Quality Paint</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      position: relative;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .nav-logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: blue;
+    }
+
+    .nav-logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 100px;
+    }
+
+    .nav-logo span {
+      color: #32CD32;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      padding: 0.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      color: #007BFF;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .gallery-container {
+      padding: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .container {
+      width: 100%;
+      padding: 2rem;
+      background: #f9f9f9;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Client Carousel */
+    .client {
+      width: 100%;
+      text-align: center;
+    }
+
+    .client h6 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    .carousel {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 2rem;
+      animation: scrollCarousel 20s linear infinite;
+      align-items: center;
+      width: max-content;
+    }
+
+    .carousel img {
+      height: 80px;
+      width: auto;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease;
+    }
+
+    .carousel img:hover {
+      filter: grayscale(0%);
+    }
+
+    @keyframes scrollCarousel {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Newsletter */
+    .newsletter {
+      width: 100%;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .newsletter div {
+      padding: 1rem;
+      text-align: center;
+      width: 90%;
+    }
+
+    .newsletter .form {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .newsletter input {
+      padding: 0.5rem;
+      width: 30%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      outline: none;
+    }
+
+    .newsletter button {
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .newsletter button:hover {
+      background: #555;
+    }
+
+
+
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #ddd;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .newsletter input {
+        width: 60%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">
+        <img src="image/inter-color-logo.png">
+        <h1> <span>Inter</span>Colour</h1>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a href="inter-colour.html">Home</a>
+        <a href="#">Gallery</a>
+        <a href="our.offices.html">Our Offices</a>
+        <a href="products.html">Products</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="gallery-container">
+    <div class="gallery-grid">
+      <img src="image/image-asset.jpeg">
+      <img src="image/image-asset (1).jpeg">
+      <img src="image/image-asset (2).jpeg">
+      <img src="image/image-asset (3).jpeg">
+      <img src="image/image-asset (4).jpeg">
+      <img src="image/image-asset (5).jpeg">
+      <img src="image/image-asset (6).jpeg">
+      <img src="image/image-asset (7).jpeg">
+      <img src="image/image-asset (8).jpeg">
+      <img src="image/unsplash-image-9mPl0Zo7_gQ.jpg">
+      <img src="image/unsplash-image-Et2gt2_ENGw.jpg">
+      <img src="image/unsplash-image-l9nngSmvCVY.jpg">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="inner-wrapper">
+      <!-- Contact Section -->
+      <div class="contact">
+        <p>WHATSAPP US</p>
+        <p>FEEDBACK</p>
+      </div>
+      <br>
+
+      <!-- Carousel Section -->
+      <div class="client">
+        <h6>OUR CLIENTELE</h6> <br><br>
+        <div class="carousel">
+          <div class="carousel-track">
+            <img src="image/nnpc-218x80.png" alt="NNPC">
+            <img src="image/NBC-218x80.png" alt="NBC">
+            <img src="image/Shell-218x80.png" alt="Shell">
+            <img src="image/golden_tulip-218x80.png" alt="Golden Tulip">
+            <img src="image/Untitled-4.png" alt="Client">
+            <img src="image/diamond-218x80.png" alt="Diamond Bank">
+            <img src="image/deeper+life-218x80.png" alt="Deeper Life">
+            <img src="image/christ_emabssy-218x80.png" alt="Christ Embassy">
+            <img src="image/gtb-218x80.png" alt="GTBank">
+
+            <!-- Duplicate for seamless loop -->
+            <img src="image/nnpc-218x80.png" alt="NNPC">
+            <img src="image/NBC-218x80.png" alt="NBC">
+            <img src="image/Shell-218x80.png" alt="Shell">
+            <img src="image/golden_tulip-218x80.png" alt="Golden Tulip">
+            <img src="image/Untitled-4.png" alt="Client">
+            <img src="image/diamond-218x80.png" alt="Diamond Bank">
+            <img src="image/deeper+life-218x80.png" alt="Deeper Life">
+            <img src="image/christ_emabssy-218x80.png" alt="Christ Embassy">
+            <img src="image/gtb-218x80.png" alt="GTBank">
+          </div>
+        </div>
+      </div>
+
+      <br><br>
+
+      <!-- Newsletter Section -->
+      <div class="newsletter">
+        <div>
+          <h2>Newsletter</h2>
+          <p>Sign up with your email address to receive news and updates.</p>
+          <div class="form">
+            <input type="text" name="text" placeholder="Enter your mail">
+            <button>Sign up</button>
+          </div> <br>
+          <p><i>We respect your privacy</i></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
